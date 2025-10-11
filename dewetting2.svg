@@ -1,0 +1,134 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif" font-size="18">
+    <rect x="0" y="0" width="1000" height="700" fill="white"/>
+
+    <text x="500" y="70" font-size="36" font-weight="bold" text-anchor="middle" fill="#333">
+        Proceso de Dewetting de una película delgada
+    </text>
+
+    <defs>
+        <linearGradient id="goldTop" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFD700"/>
+            <stop offset="100%" style="stop-color:#FFC107"/>
+        </linearGradient>
+        <linearGradient id="goldSide" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#FFA500"/>
+            <stop offset="100%" style="stop-color:#B8860B"/>
+        </linearGradient>
+        <linearGradient id="purpleTop" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#A020F0"/>
+            <stop offset="100%" style="stop-color:#B15FFD"/>
+        </linearGradient>
+        <linearGradient id="purpleSide" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#8A2BE2"/>
+            <stop offset="100%" style="stop-color:#4B0082"/>
+        </linearGradient>
+
+        <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+            <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5"/>
+            <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5"/>
+            <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
+        </filter>
+
+        <marker id="arrow" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#5A189A"/>
+        </marker>
+    </defs>
+
+    <g id="isometric_substrate">
+        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#purpleTop)"/> <path d="M0,0 L0,100 L50,150 L50,50 Z" fill="url(#purpleSide)"/> <path d="M200,0 L200,100 L250,150 L250,50 Z" fill="url(#purpleSide)"/> </g>
+    
+    <g id="isometric_film">
+        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#goldTop)"/> <path d="M0,0 L0,10 L50,60 L50,50 Z" fill="url(#goldSide)"/> <path d="M200,0 L200,10 L250,60 L250,50 Z" fill="url(#goldSide)"/> </g>
+
+    <g id="isometric_island_small">
+        <path d="M20,10 C25,5 35,5 40,10 L40,20 C35,25 25,25 20,20 Z" fill="url(#goldTop)"/>
+        <path d="M20,10 L20,30 C25,35 35,35 40,30 L40,20 Z" fill="url(#goldSide)"/>
+    </g>
+    <g id="isometric_island_medium">
+        <path d="M0,0 L50,0 L60,10 L10,10 Z" fill="url(#goldTop)"/>
+        <path d="M0,0 L0,20 L10,30 L10,10 Z" fill="url(#goldSide)"/>
+        <path d="M50,0 L50,20 L60,30 L60,10 Z" fill="url(#goldSide)"/>
+    </g>
+    <g id="isometric_island_large">
+        <path d="M0,0 L80,0 L90,10 L10,10 Z" fill="url(#goldTop)"/>
+        <path d="M0,0 L0,25 L10,35 L10,10 Z" fill="url(#goldSide)"/>
+        <path d="M80,0 L80,25 L90,35 L90,10 Z" fill="url(#goldSide)"/>
+    </g>
+
+    <g id="transition_arrow">
+        <path d="M0,0 L50,0 L40,10 L10,10 Z" fill="#5A189A"/>
+        <rect x="0" y="0" width="50" height="10" fill="url(#purpleTop)"/>
+        <path d="M0,0 L0,20 L10,30 L10,10 Z" fill="url(#purpleSide)"/>
+        <path d="M50,0 L50,20 L40,30 L40,10 Z" fill="url(#purpleSide)"/>
+    </g>
+    
+    <g transform="translate(100, 150)" filter="url(#shadow)">
+        <use href="#isometric_substrate" transform="scale(1.5)"/>
+        <use href="#isometric_film" transform="scale(1.5) translate(0, -10)"/>
+    </g>
+    <circle cx="120" cy="120" r="20" fill="#5A189A"/>
+    <text x="120" y="128" font-size="24" font-weight="bold" fill="white" text-anchor="middle">1</text>
+    <text x="280" y="128" font-size="22" font-weight="bold" fill="#333">Película continua</text>
+
+    <path d="M420,200 L580,200" stroke="#5A189A" stroke-width="6" marker-end="url(#arrow)"/>
+
+    <g transform="translate(600, 150)" filter="url(#shadow)">
+        <use href="#isometric_substrate" transform="scale(1.5)"/>
+        <use href="#isometric_film" transform="scale(1.5) translate(0, -10)"/>
+        <ellipse cx="120" cy="10" rx="20" ry="10" fill="url(#purpleTop)" transform="translate(45,10)"/>
+        <ellipse cx="180" cy="30" rx="15" ry="8" fill="url(#purpleTop)" transform="translate(45,10)"/>
+        <ellipse cx="80" cy="40" rx="18" ry="9" fill="url(#purpleTop)" transform="translate(45,10)"/>
+        <ellipse cx="200" cy="80" rx="22" ry="11" fill="url(#purpleTop)" transform="translate(45,10)"/>
+    </g>
+    <circle cx="620" cy="120" r="20" fill="#5A189A"/>
+    <text x="620" y="128" font-size="24" font-weight="bold" fill="white" text-anchor="middle">2</text>
+    <text x="780" y="128" font-size="22" font-weight="bold" fill="#333">Nucleación de huecos</text>
+
+    <path d="M850,270 L850,430" stroke="#5A189A" stroke-width="6" marker-end="url(#arrow)"/>
+
+    <g transform="translate(600, 450)" filter="url(#shadow)">
+        <use href="#isometric_substrate" transform="scale(1.5)"/>
+        <g transform="scale(1.5) translate(0, -10)">
+            <path d="M0,0 L20,0 L30,10 L10,10 L10,50 L0,40 Z" fill="url(#goldTop)"/>
+            <path d="M0,0 L0,40 L10,50 L10,10 Z" fill="url(#goldSide)"/>
+            <path d="M20,0 L20,30 L30,40 L30,10 Z" fill="url(#goldSide)"/>
+
+            <path d="M80,0 L120,0 L130,10 L90,10 L90,40 L80,30 Z" fill="url(#goldTop)"/>
+            <path d="M80,0 L80,30 L90,40 L90,10 Z" fill="url(#goldSide)"/>
+            <path d="M120,0 L120,30 L130,40 L130,10 Z" fill="url(#goldSide)"/>
+
+            <path d="M180,0 L200,0 L210,10 L190,10 L190,50 L180,40 Z" fill="url(#goldTop)"/>
+            <path d="M180,0 L180,40 L190,50 L190,10 Z" fill="url(#goldSide)"/>
+            <path d="M200,0 L200,40 L210,50 L210,10 Z" fill="url(#goldSide)"/>
+        </g>
+        
+    </g>
+    <circle cx="620" cy="420" r="20" fill="#5A189A"/>
+    <text x="620" y="428" font-size="24" font-weight="bold" fill="white" text-anchor="middle">3</text>
+    <text x="780" y="428" font-size="22" font-weight="bold" fill="#333">Crecimiento de huecos</text>
+
+    <path d="M420,500 L580,500" stroke="#5A189A" stroke-width="6" marker-end="url(#arrow)" transform="rotate(180 500 500)"/>
+
+    <g transform="translate(100, 450)" filter="url(#shadow)">
+        <use href="#isometric_substrate" transform="scale(1.5)"/>
+        <g transform="translate(60, 20)">
+            <use href="#isometric_island_large"/>
+        </g>
+        <g transform="translate(160, 10)">
+            <use href="#isometric_island_medium"/>
+        </g>
+        <g transform="translate(260, 30)">
+            <use href="#isometric_island_small"/>
+        </g>
+        <g transform="translate(100, 40)">
+            <use href="#isometric_island_small"/>
+        </g>
+        <g transform="translate(200, 50)">
+            <use href="#isometric_island_large"/>
+        </g>
+    </g>
+    <circle cx="120" cy="420" r="20" fill="#5A189A"/>
+    <text x="120" y="428" font-size="24" font-weight="bold" fill="white" text-anchor="middle">4</text>
+    <text x="280" y="428" font-size="22" font-weight="bold" fill="#333">Islas</text>
+
+</svg>
