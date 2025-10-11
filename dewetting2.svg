@@ -22,23 +22,27 @@
             <stop offset="0%" style="stop-color:#8A2BE2"/>
             <stop offset="100%" style="stop-color:#4B0082"/>
         </linearGradient>
-
         <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
             <feOffset result="offOut" in="SourceAlpha" dx="5" dy="5"/>
             <feGaussianBlur result="blurOut" in="offOut" stdDeviation="5"/>
             <feBlend in="SourceGraphic" in2="blurOut" mode="normal"/>
         </filter>
-
         <marker id="arrow" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
             <polygon points="0 0, 10 3.5, 0 7" fill="#5A189A"/>
         </marker>
     </defs>
 
     <g id="isometric_substrate">
-        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#purpleTop)"/> <path d="M0,0 L0,100 L50,150 L50,50 Z" fill="url(#purpleSide)"/> <path d="M200,0 L200,100 L250,150 L250,50 Z" fill="url(#purpleSide)"/> </g>
+        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#purpleTop)"/>
+        <path d="M0,0 L0,100 L50,150 L50,50 Z" fill="url(#purpleSide)"/>
+        <path d="M200,0 L200,100 L250,150 L250,50 Z" fill="url(#purpleSide)"/>
+    </g>
     
     <g id="isometric_film">
-        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#goldTop)"/> <path d="M0,0 L0,10 L50,60 L50,50 Z" fill="url(#goldSide)"/> <path d="M200,0 L200,10 L250,60 L250,50 Z" fill="url(#goldSide)"/> </g>
+        <path d="M0,0 L200,0 L250,50 L50,50 Z" fill="url(#goldTop)"/>
+        <path d="M0,0 L0,10 L50,60 L50,50 Z" fill="url(#goldSide)"/>
+        <path d="M200,0 L200,10 L250,60 L250,50 Z" fill="url(#goldSide)"/>
+    </g>
 
     <g id="isometric_island_small">
         <path d="M20,10 C25,5 35,5 40,10 L40,20 C35,25 25,25 20,20 Z" fill="url(#goldTop)"/>
@@ -55,13 +59,11 @@
         <path d="M80,0 L80,25 L90,35 L90,10 Z" fill="url(#goldSide)"/>
     </g>
 
-    <g id="transition_arrow">
-        <path d="M0,0 L50,0 L40,10 L10,10 Z" fill="#5A189A"/>
-        <rect x="0" y="0" width="50" height="10" fill="url(#purpleTop)"/>
-        <path d="M0,0 L0,20 L10,30 L10,10 Z" fill="url(#purpleSide)"/>
-        <path d="M50,0 L50,20 L40,30 L40,10 Z" fill="url(#purpleSide)"/>
+    <g id="isometric_ellipsoid_incrustado">
+        <ellipse cx="25" cy="15" rx="20" ry="10" fill="url(#goldTop)"/>
+        <path d="M5,15 C5,20 45,20 45,15 L45,25 C45,30 5,30 5,25 Z" fill="url(#goldSide)" />
     </g>
-    
+
     <g transform="translate(100, 150)" filter="url(#shadow)">
         <use href="#isometric_substrate" transform="scale(1.5)"/>
         <use href="#isometric_film" transform="scale(1.5) translate(0, -10)"/>
@@ -101,34 +103,24 @@
             <path d="M180,0 L180,40 L190,50 L190,10 Z" fill="url(#goldSide)"/>
             <path d="M200,0 L200,40 L210,50 L210,10 Z" fill="url(#goldSide)"/>
         </g>
-        
     </g>
     <circle cx="620" cy="420" r="20" fill="#5A189A"/>
     <text x="620" y="428" font-size="24" font-weight="bold" fill="white" text-anchor="middle">3</text>
     <text x="780" y="428" font-size="22" font-weight="bold" fill="#333">Crecimiento de huecos</text>
 
-    <path d="M420,500 L580,500" stroke="#5A189A" stroke-width="6" marker-end="url(#arrow)" transform="rotate(180 500 500)"/>
+    <path d="M580,500 L420,500" stroke="#5A189A" stroke-width="6" marker-end="url(#arrow)" transform="rotate(180 500 500)"/>
 
     <g transform="translate(100, 450)" filter="url(#shadow)">
         <use href="#isometric_substrate" transform="scale(1.5)"/>
-        <g transform="translate(60, 20)">
-            <use href="#isometric_island_large"/>
-        </g>
-        <g transform="translate(160, 10)">
-            <use href="#isometric_island_medium"/>
-        </g>
-        <g transform="translate(260, 30)">
-            <use href="#isometric_island_small"/>
-        </g>
-        <g transform="translate(100, 40)">
-            <use href="#isometric_island_small"/>
-        </g>
-        <g transform="translate(200, 50)">
-            <use href="#isometric_island_large"/>
+        <g transform="scale(1.5) translate(0, 0)">
+            <use href="#isometric_ellipsoid_incrustado" transform="translate(10, 10)"/>
+            <use href="#isometric_ellipsoid_incrustado" transform="translate(60, 20)"/>
+            <use href="#isometric_ellipsoid_incrustado" transform="translate(120, -5)"/>
+            <use href="#isometric_ellipsoid_incrustado" transform="translate(180, 25)"/>
+            <use href="#isometric_ellipsoid_incrustado" transform="translate(100, 40)"/>
         </g>
     </g>
     <circle cx="120" cy="420" r="20" fill="#5A189A"/>
     <text x="120" y="428" font-size="24" font-weight="bold" fill="white" text-anchor="middle">4</text>
     <text x="280" y="428" font-size="22" font-weight="bold" fill="#333">Islas</text>
-
 </svg>
