@@ -2,7 +2,9 @@
  **D. Larissa Luna González**, J. A. Urrutia-Anguiano, A. Reyes-Coronado
 
 National Physics Congress 2025 (CNF 2025)
+
 Format: Poster  
+
 Presented: 13/10/2025  
 
 **Abstract:**  
